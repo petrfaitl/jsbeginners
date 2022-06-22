@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Minimal Public Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="headerContainer"></div>
+<main class="container pt-5">
+    <h1 class="py-3 mb-4">Delete a book record</h1>
+    <form class="row g-3 needs-validation" novalidate="" id="deleteBookForm">
+        <div class=" col-12 col-md-8 ">
+            <label for="selectBook" class="form-label">Book Records</label>
+            <select type="text" class="form-control" name="selectBook" id="selectBook">
+                <option disabled selected>Select book from records</option>
+                <!--                <option value="isbn">title of book</option>-->
+
+            </select>
+        </div>
+        <div class=" col-6 col-md-4">
+            <label for="isbn" class="form-label">ISBN13</label>
+            <input readonly type="text" class="form-control" name="isbn" id="isbn">
+        </div>
+
+
+        <div class="col-12">
+            <button class="btn btn-secondary" type="reset" name="resetBtn">Cancel</button>
+            <button class="btn btn-primary" type="submit" name="deleteBook" id="deleteBook">Delete Book</button>
+        </div>
+    </form>
+
+</main>
+<div id="footerContainer"></div>
+<script src="src/c/initialise.js"></script>
+<script src="src/m/Book.js"></script>
+<script src="src/v/deleteBook.js"></script>
+<script>
+    window.addEventListener('load', _ => {
+        pl.v.deleteBook.setupUserInterface();
+    });
+</script>
+</body>
+</html>
